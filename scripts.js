@@ -12,3 +12,18 @@ window.addEventListener('scroll', () => {
     hill5.style.left = value * -1.5 + 'px';
     hill4.style.left = value * 1.5 + 'px';
 })
+
+//loader
+const stars = document.querySelectorAll("#star");
+stars.forEach((star) => {
+  let duration = Math.random() * (1.2 - 0.6) + 0.6;
+  star.style.animation = `stars ${duration}s infinite linear`;
+  setTimeout(function () {
+    loader.style.display = 'none';
+    content.style.display = 'block';
+}, 2000);
+});
+window.addEventListener("load", () => {
+  const preloader = document.querySelector(".preloader");
+  preloader.classList.add("preload-finish");
+});
